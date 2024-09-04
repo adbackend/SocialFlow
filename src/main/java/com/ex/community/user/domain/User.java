@@ -12,6 +12,10 @@ public class User {
     private final PositiveIntegerCounter followerCounter; // 현재 사용자의 팔로워 수
 
     public User(Long id, UserInfo userInfo) {
+
+        if(userInfo == null){
+            throw new IllegalArgumentException();
+        }
         this.id = id;
         this.info = userInfo;
         this.followingCount = new PositiveIntegerCounter();
@@ -53,5 +57,21 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public int followerCount(){
+        return followerCounter.getCount();
+    }
+
+    public int followingCount(){
+        return followingCount.getCount();
+    }
+
+    public PositiveIntegerCounter getFollowingCount() {
+        return followingCount;
     }
 }
