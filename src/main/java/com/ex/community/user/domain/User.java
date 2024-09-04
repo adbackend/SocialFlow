@@ -74,4 +74,8 @@ public class User {
     public PositiveIntegerCounter getFollowingCount() {
         return followingCount;
     }
+
+    public UserInfo getInfo() {
+        return info;
+    }
 }
