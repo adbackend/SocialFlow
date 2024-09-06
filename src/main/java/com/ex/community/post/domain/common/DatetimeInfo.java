@@ -13,7 +13,7 @@ public class DatetimeInfo {
     }
 
     public void updateEditDatetime(){
-        this.isEdited = false;
+        this.isEdited = true;
         this.dateTime = LocalDateTime.now();
     }
 
